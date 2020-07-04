@@ -1,2 +1,2 @@
-MechanicalSoup
+selenium
 scrapy
