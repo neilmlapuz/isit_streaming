@@ -1,5 +1,7 @@
 import sys
-from mechanicalsoup import StatefulBrowser
+import time
+import selenium
+from selenium import webdriver
 
 class Lookup(object):
     movie_name = ''
@@ -14,15 +16,19 @@ class Lookup(object):
         self.request_site()
 
 
+    def set_chrome_browser(self):
+        driver = webdriver.Chrome('/Users/adminy/Downloads/chromedriver')
+        driver.get('http://www.google.com/')
+        time.sleep(20)
+        driver.quit()
+
+
+
     def request_site(self):
         print('reached')
-        browser = StatefulBrowser()
-        browser.open("https://www.justwatch.com/")
-        # browser.select_form('#search_form_homepage')
-        # browser['q'] = 'spiderman'
-        # browser.submit_selected()
 
-        print(browser.get_current_page())
+        self.set_chrome_browser()
+
 
 
 
