@@ -1,1 +1,4 @@
 .env
+geckodriver
+scripts/geckodriver.log
+scripts/out.xml
