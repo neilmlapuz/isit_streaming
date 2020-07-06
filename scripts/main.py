@@ -4,6 +4,7 @@ from optparse import OptionParser
 
 
 
+
 def set_options():
     parser = OptionParser()
 
@@ -13,6 +14,12 @@ def set_options():
     parser.add_option('-n', '--new',
                   action='store_true',
                   help='What "is" new?')
+
+    parser.add_option('-r', '--add_region',
+                action='append',
+                dest='regions',
+                default=[],
+                help='Add region')
 
     
     return parser
@@ -26,10 +33,15 @@ def parse_options():
 def main():
     (option, arg) = parse_options()
 
-    if option.lookup:
+    if option.lookup and option.regions:
+        opts.lookup_movie_specified_regions(arg, option.regions)
+
+    elif option.lookup:
         opts.lookup_movie(arg)
+
     elif option.new:
         opts.new_movie(arg)
+
 
 
 if __name__ == '__main__':

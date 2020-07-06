@@ -11,14 +11,17 @@ from bs4 import BeautifulSoup
 
 
 class Lookup(object):
-    movie_name = ''
 
-    def __init__(self, movie_name):
+    def __init__(self):
+        self.movie_name = ''
+        self.regions = ['ie', 'us', 'au']
+
+    def set_movie_query_spec_regions(self, movie_name, regions):
         self.movie_name = movie_name
+        self.regions = regions
 
-
-    def check_availability(self):
-        self.request_site()
+    def set_movie_query(self, movie_name):
+        self.movie_name = movie_name
 
 
     def configure_driver(self):
@@ -46,13 +49,12 @@ class Lookup(object):
                 })
         print('---------------------------------')
 
-    def request_site(self):
+    def check_availability(self):
         search_q = self.movie_name
-        regions = ['ie', 'us', 'au']
         ff_browser = self.configure_driver()
 
 
-        for reg in regions:
+        for reg in self.regions:
             print(f'Region: {reg}')
 
             ff_browser.get(f'https://www.justwatch.com/{reg}/search?providers=nfx&q={search_q}')
