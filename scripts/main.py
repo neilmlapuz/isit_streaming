@@ -2,9 +2,6 @@ import sys
 import opts
 from optparse import OptionParser
 
-
-
-
 def set_options():
     parser = OptionParser()
 
@@ -21,13 +18,12 @@ def set_options():
                 default=[],
                 help='Add region')
 
-    
     return parser
 
 def parse_options():
     parser = set_options()
     (option, args) = parser.parse_args()
-
+    
     return (option, args)
 
 def main():
@@ -39,8 +35,9 @@ def main():
     elif option.lookup:
         opts.lookup_movie(arg)
 
-    elif option.new:
-        opts.new_movie(arg)
+    # Todo
+    # elif option.new:
+    #     opts.new_movie(arg)
 
 
 

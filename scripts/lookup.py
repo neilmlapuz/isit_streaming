@@ -1,5 +1,5 @@
 import sys
-import time
+import os
 import selenium
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -30,7 +30,7 @@ class Lookup(object):
         '''
         driver_options = Options()
         driver_options.add_argument('--headless')
-        driver = webdriver.Firefox(executable_path='./geckodriver', firefox_options=driver_options)
+        driver = webdriver.Firefox(executable_path= os.path.dirname(os.path.realpath(__file__)) + '/geckodriver', firefox_options=driver_options)
 
         return driver
 

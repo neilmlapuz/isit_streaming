@@ -2,3 +2,6 @@
 geckodriver
 scripts/geckodriver.log
 scripts/out.xml
+geckodriver.log
+test.txt
+test2.txt

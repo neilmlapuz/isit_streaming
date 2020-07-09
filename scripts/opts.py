@@ -15,5 +15,3 @@ def lookup_movie(movie_name):
     look = Lookup()
     look.set_movie_query(movie_name[0])
     look.check_availability()
-
-
