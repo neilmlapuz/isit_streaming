@@ -15,5 +15,6 @@ Requires FireFox, Python, `pip3` and `virtualenv` to be installed on your machin
 
 ## Usage - to search for a movie
 > run `sh run.sh -l $movie_name`
-`sh run.sh -l spiderman`
+
+example - `sh run.sh -l spiderman`
 
