@@ -30,7 +30,7 @@ class Lookup(object):
         '''
         driver_options = Options()
         driver_options.add_argument('--headless')
-        driver = webdriver.Firefox(executable_path= os.path.dirname(os.path.realpath(__file__)) + '/geckodriver', firefox_options=driver_options)
+        driver = webdriver.Firefox(executable_path=os.path.dirname(os.path.realpath(__file__)) + '/geckodriver', firefox_options=driver_options)
 
         return driver
 
@@ -45,7 +45,7 @@ class Lookup(object):
                 print({
                     'title':title_row.select_one(title_selector).text,
                     'year':title_row.select_one(year_selector).text,
-                    'seasons':title_row.select_one(season_selector).text 
+                    # 'seasons':title_row.select_one(season_selector).text if title_row.select_one(season_selector) != None else ''
                 })
         print('---------------------------------')
 

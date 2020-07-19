@@ -1,9 +1,11 @@
 import json
 import sys
+import os
 
 def check_region(regions):
     data_countries = {}
-    with open('countries.json', 'r') as f:
+    file_path = os.path.dirname(os.path.realpath(__file__))
+    with open(file_path + '/countries.json', 'r') as f:
         data_countries = json.load(f)
 
     for reg in regions:
